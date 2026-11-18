@@ -1,0 +1,1 @@
+/usr/bin/c++ -g -Wl,-search_paths_first -Wl,-headerpad_max_install_names -fsanitize=address CMakeFiles/lab_02_exe.dir/src/main.cpp.o -o lab_02_exe  liblab_02_lib.a

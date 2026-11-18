@@ -1,0 +1,3 @@
+/Users/nadusha/Downloads/Codes_Можноудалить/OOP_Labs/OOP_Labs/Lab02/build/_deps/googletest-subbuild/CMakeFiles/googletest-populate.dir
+/Users/nadusha/Downloads/Codes_Можноудалить/OOP_Labs/OOP_Labs/Lab02/build/_deps/googletest-subbuild/CMakeFiles/edit_cache.dir
+/Users/nadusha/Downloads/Codes_Можноудалить/OOP_Labs/OOP_Labs/Lab02/build/_deps/googletest-subbuild/CMakeFiles/rebuild_cache.dir

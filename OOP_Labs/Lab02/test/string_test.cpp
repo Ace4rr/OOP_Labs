@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "src/string.hpp"
+#include "lab_02/string.hpp"
 
 TEST(StringTest, DefaultConstructor) {
     String s;
@@ -20,13 +20,13 @@ TEST(StringTest, RuleOfFiveCopyAndMove) {
 TEST(StringVariantTest, CountOccurrencesBasic) {
     String str("ababab");
     String sub("ab");
-    EXPECT_EQ(str.count_occurrences(sub), 3);
+    EXPECT_EQ(str.count_occurences(sub), 3);
 }
 
 TEST(StringVariantTest, CountOccurrencesNonOverlapping) {
     String str("abababa");
     String sub("aba");
-    EXPECT_EQ(str.count_occurrences(sub), 2);
+    EXPECT_EQ(str.count_occurences(sub), 2);
 }
 
 TEST(StringVariantTest, CountOccurrencesEdgeCases) {
@@ -34,6 +34,6 @@ TEST(StringVariantTest, CountOccurrencesEdgeCases) {
     String empty_sub("");
     String long_sub("hello world");
 
-    EXPECT_EQ(str.count_occurrences(empty_sub), 0);
-    EXPECT_EQ(str.count_occurrences(long_sub), 0);
+    EXPECT_EQ(str.count_occurences(empty_sub), 0);
+    EXPECT_EQ(str.count_occurences(long_sub), 0);
 }

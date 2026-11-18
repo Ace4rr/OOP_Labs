@@ -1,0 +1,5 @@
+if(EXISTS "/Users/nadusha/Downloads/Codes_Можноудалить/OOP_Labs/OOP_Labs/Lab02/build/lab_02_tests[1]_tests.cmake")
+  include("/Users/nadusha/Downloads/Codes_Можноудалить/OOP_Labs/OOP_Labs/Lab02/build/lab_02_tests[1]_tests.cmake")
+else()
+  add_test(lab_02_tests_NOT_BUILT lab_02_tests_NOT_BUILT)
+endif()

@@ -42,7 +42,7 @@ String& String::operator=(String other) noexcept {
     return *this;
 }
 
-std::size_t String::count_occurrences(const String& substr) const {
+std::size_t String::count_occurences(const String& substr) const {
     if (substr.size_==0 || substr.size_ >size_) {
         return 0;
     }
@@ -70,3 +70,26 @@ std::size_t String::count_occurrences(const String& substr) const {
 
     return count;
 }
+
+
+String::String(const String& other) : size_(other.size_), capacity_(other.capacity_) {
+    data_ = new char[capacity_ + 1];
+    if (other.data_) {
+        std::strcpy(data_, other.data_);
+    } else {
+        data_[0] = '\0';
+    }
+}
+
+std::size_t String::size() const {
+    return size_;
+}
+
+std::size_t String::capacity() const {
+    return capacity_;
+}
+
+const char* String::c_str() const {
+    return data_ ? data_ : "";
+}
+

@@ -16,9 +16,10 @@ target_link_libraries(lab_02_exe PRIVATE lab_02_lib)
 
 include(FetchContent)
 FetchContent_Declare(
-  googletest
-  URL https://github.com
-)
+        googletest
+        GIT_REPOSITORY https://github.com/google/googletest.git
+        GIT_TAG v1.15.2
+    )
 FetchContent_MakeAvailable(googletest)
 
 enable_testing()

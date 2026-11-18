@@ -1,0 +1,6 @@
+StringTest.DefaultConstructor 3 0.115701
+StringTest.RuleOfFiveCopyAndMove 2 0.0924765
+StringVariantTest.CountOccurrencesBasic 3 0.062321
+StringVariantTest.CountOccurrencesNonOverlapping 3 0.0668931
+StringVariantTest.CountOccurrencesEdgeCases 3 0.0647748
+---

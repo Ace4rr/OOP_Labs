@@ -15,7 +15,7 @@ class String{
 
         String(const String& other);
         String(String&& other ) noexcept;
-        String& operator=(String other);
+        String& operator=(String other) noexcept;
         void swap(String& other) noexcept;
         
         size_t size() const;
