@@ -90,32 +90,58 @@ int main() {
                     break;
                 }
 
-                int value{};
-                while (true) {
+                std::cout << "1. Заполнить всю одним числом\n"
+                          << "2. Ввести элементы вручную\n"
+                          << "Выберите способ: ";
+
+                int fill_mode{};
+                if (!(std::cin >> fill_mode)) {
+                    std::cin.clear();
+                    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                    std::cout << "Неверный ввод\n";
+                    break;
+                }
+
+                if (fill_mode == 1) {
                     std::cout << "Введите значение: ";
-
-                    if (!(std::cin >> value)) {
-                        if (std::cin.eof()) {
-                            running = false;
-                            break;
-                        }
-
+                    int value{};
+                    if (std::cin >> value) {
+                        lab01::matrix_fill(matrix, rows, cols, value);
+                        std::cout << "Матрица заполнена:\n";
+                        lab01::matrix_print(matrix, rows, cols);
+                    } else {
                         std::cin.clear();
                         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-
-                        std::cout << "Неверный ввод\n";
-                        continue;
+                        std::cout << "Неверный ввод значения\n";
                     }
-
-                    break;
+                } else if (fill_mode == 2) {
+                    std::cout << "Введите " << (rows * cols) << " чисел:\n";
+                    for (std::size_t i = 0; i < rows; ++i) {
+                        for (std::size_t j = 0; j < cols; ++j) {
+                            while (!(std::cin >> matrix[i][j])) {
+                                if (std::cin.eof()) {
+                                    running = false;
+                                    break;
+                                }
+                                std::cin.clear();
+                                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                                std::cout << "Неверный ввод, введите число: ";
+                            }
+                            if (!running) {
+                                break;
+                            }
+                        }
+                        if (!running) {
+                            break;
+                        }
+                    }
+                    if (running) {
+                        std::cout << "Матрица заполнена:\n";
+                        lab01::matrix_print(matrix, rows, cols);
+                    }
+                } else {
+                    std::cout << "Неизвестный способ\n";
                 }
-
-                if (!running) {
-                    break;
-                }
-
-                lab01::matrix_fill(matrix, rows, cols, value);
-                lab01::matrix_print(matrix, rows, cols);
                 break;
             }
 
