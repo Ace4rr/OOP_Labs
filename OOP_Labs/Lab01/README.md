@@ -11,24 +11,17 @@
 ### 1. Сборка проекта (macOS / Linux)
 ```bash
 cd Lab01
-mkdir build && cd build
+mkdir -p build && cd build
 cmake ..
 cmake --build .
 ```
 
 ### 2. Запуск программы с меню
 ```bash
-./lab_01_exe
+./lab01_main
 ```
 
 ### 3. Запуск тестов Google Test
 ```bash
-./lab_01_tests
-# или через ctest:
-ctest --output-on-failure
+./tests
 ```
-
----
-
-## Проверка на утечки памяти (AddressSanitizer)
-Сборка автоматически компилируется с флагами `-fsanitize=address`. При выполнении программы и тестов проверяется корректное освобождение всех динамических массивов (`delete[]`).
